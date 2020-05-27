@@ -24,7 +24,6 @@ h1{
 	font-size: 30px;
 	margin-top: 5px;
 	margin-bottom:0px;
-	text-shadow: 
 }
 
 #clock{
@@ -50,13 +49,27 @@ h1{
 	display: block;
 }
 
-option{
-	float: left;
+.label-wakeup, #label-wakeup{
+	display: inline;
+}
+
+#off-button{
+	text-align: center;
+	font-size: 0.8em;
+	border-radius: 6px;
+	background-color: teal;
+	height: 2em;
+	width:6em;
+	padding-top:5px;
+	padding-bottom: 5px;
+	color: white;
+
 }
 
 .wrapper{
 	text-align: center;
 	margin: 30px;
+	border-radius: 6px;
 }
 
 #end-button{
@@ -71,6 +84,8 @@ option{
 	font-size: 15px
 
 }
+
+
 
 .footer{
 	font-size: 10px;

@@ -2,14 +2,11 @@ window.onload=function(){
 
 	let clock = document.getElementById('clock');
 	let img = document.getElementById("img-cat");
+	let button = document.getElementById("end-button");
 	let hour, date, sec, mins;
 	let partyTime = 1;
-
   
-	let button = document.getElementById("end-button");
-
 	let partyButton = function(){
-		console.log("2");
 		if(partyTime > 0){
 			img.setAttribute("src", "cute-cat-with-hat.jpeg");
 			partyTime = -1;
@@ -18,6 +15,7 @@ window.onload=function(){
 			partyTime = 1;
 		}
 	}
+	
 
 	b = button.addEventListener("click", partyButton);
 
@@ -50,6 +48,7 @@ window.onload=function(){
 
 let oneSecond = 1000;
 t = setInterval(function() {currentTime()}, 1000);
+
 	
 let currentPicture = function(){
 	let date = new Date()
@@ -69,25 +68,13 @@ let currentPicture = function(){
 		img.setAttribute("src", "sleeping-cat.jpg");
 	}else if(now == wakeupTime){
 		img.setAttribute("src", "fighting-cat.jpg");
+		playAlarm();
 	}else if(now == lunchTime){
-		img.setAttribute("src", "lunch-cat.gif");
+		img.setAttribute("src", "lunch-cat.jpg");
 	}else if(partyTime < 0){
 		img.setAttribute("src", "cute-cat-with-hat.jpeg");
 	}
 
-	/*switch(hour){
-		case userTime_wakeup:
-			img.setAttribute("src", "fighting-cat.jpg");
-			break
-
-		case userTime_lunch:
-			img.setAttribute("src", "lunch-cat.gif");
-			break
-
-		case userTime_nap:
-			img.setAttribute("src", "sleeping-cat.jpg");
-			break
-	}*/
 }
 
 p = setInterval(function(){currentPicture()}, oneSecond);
